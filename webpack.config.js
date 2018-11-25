@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
     mode: 'development',
-    entry: './lib/components/Index.js',
+    entry: ['babel-polyfill','./lib/components/Index.js'],
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
@@ -12,7 +12,7 @@ module.exports = {
         rules: [
             // rules for modules (configure loaders, parser options, etc.)
             {
-                test: /\.js$/, use: 'babel-loader'
+                test: /\.js$/, exclude: /node_modules/,use: 'babel-loader'
             }
 
         ]
