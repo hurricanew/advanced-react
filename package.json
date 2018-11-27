@@ -4,7 +4,8 @@
   "main": "lib/server.js",
   "license": "MIT",
   "scripts": {
-    "dev": "pm2 start lib/server.js --watch --interpreter babel-node",
+    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
+    "stop": "pm2 stop all",
     "webpack": "webpack -wd",
     "test": "jest --watch"
   },
@@ -20,6 +21,7 @@
     "eslint": "^5.9.0",
     "eslint-plugin-react": "^7.11.1",
     "jest": "^23.6.0",
+    "react-test-renderer": "^16.6.3",
     "webpack-cli": "^3.1.2"
   },
   "dependencies": {
